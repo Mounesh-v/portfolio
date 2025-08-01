@@ -29,7 +29,6 @@ const Project = () => {
             trigger: project,
             start: "top 85%",
             toggleActions: "play reverse play reverse",
-            // markers: true, // Uncomment to debug scroll triggers
           },
         }
       );
@@ -41,54 +40,113 @@ const Project = () => {
   }, []);
 
   return (
-    <div className="text-white bg-[#1e2836]">
-      <div className="bg-gray-900 px-5 sm:px-10 py-12 w-full">
-        <h2 className="text-orange-500 text-3xl font-semibold mb-10 text-center">
-          Projects
-        </h2>
+    <div id="projects" className="text-white bg-[#1e2836] px-4 py-12">
+      <h2 className="text-orange-500 text-3xl font-semibold mb-10 text-center">
+        Projects
+      </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 my-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+        {[
+          {
+            title: "CodeHatch – E-Learning",
+            desc: "A full-stack learning platform with user auth, video content, and payment gateway. Designed for seamless course browsing and secure access.",
+            image: "/src/assets/projects/codehatch.png",
+            tech: [
+              "React (Vite)",
+              "Tailwind CSS",
+              "GSAP",
+              "React Router v7",
+              "Express.js",
+              "MongoDB Atlas",
+              "JWT Auth",
+            ],
+            github: "https://github.com/Mounesh-v?tab=repositories",
+            demo: "https://jolly-blancmange-62ed96.netlify.app/",
+          },
+          {
+            title: "MeteoZin – Weather App",
+            desc: "Real-time weather app with animated UI, responsive layout and API-based forecasts.",
+            image: "/src/assets/projects/weather.png",
+            tech: [
+              "React",
+              "Vite",
+              "Tailwind CSS",
+              "Framer Motion",
+              "Axios",
+              "Toastify",
+            ],
+            github: "https://github.com/Mounesh-v/meteozin-weather",
+            demo: "https://meteozin.netlify.app/",
+          },
+          {
+            title: "Music Tracker",
+            desc: "A modern music search app using the Spotify API to display live album art and previews.",
+            image: "/src/assets/projects/musicTracker.png",
+            tech: ["React.js", "Tailwind CSS", "Spotify API", "Netlify"],
+            github: "https://github.com/Mounesh-v/music-tracker-app",
+            demo: "https://music-tracker-app.netlify.app/",
+          },
+          {
+            title: "TechConference – Event Platform",
+            desc: "Built with SvelteKit and Bootstrap UI for showcasing speaker lineups, schedules, and ticketing features.",
+            image: "/src/assets/projects/Techconf.png",
+            tech: ["SvelteKit", "Sveltestrap", "Bootstrap", "Netlify"],
+            github: "https://github.com/Mounesh-v/techconf",
+            demo: "https://techconfernce.netlify.app/",
+          },
+        ].map((project, index) => (
           <div
+            key={index}
             ref={addToRefs}
-            className="bg-gray-800 h-64 rounded-xl shadow-lg p-6 hover:shadow-orange-500 transition duration-300 cursor-pointer"
+            className="bg-gray-900 rounded-xl shadow-md overflow-hidden"
           >
-            <h3 className="text-xl font-bold mb-2">Full Stack Task Manager</h3>
-            <p className="text-gray-300 mb-4">
-              A task management app with React frontend and Node.js/Express backend.
-              Features user authentication, task CRUD, and deadlines.
-            </p>
+            {/* Image */}
+            <div className="relative">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 sm:h-56 object-cover"
+              />
+            </div>
+
+            {/* Text content */}
+            <div className="p-5">
+              <h3 className="text-xl sm:text-2xl font-bold text-orange-400 mb-2">
+                {project.title}
+              </h3>
+              <p className="text-gray-300 text-sm mb-3">{project.desc}</p>
+
+              {/* Tech stack */}
+              <div className="flex flex-wrap gap-2 text-xs text-orange-300 mb-4">
+                {project.tech.map((tech, i) => (
+                  <span key={i} className="bg-gray-800 px-2 py-1 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* GitHub and Live Site */}
+              <div className="flex gap-4 mt-2">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-black px-3 py-1 rounded hover:bg-gray-200 font-semibold text-sm"
+                >
+                  GitHub
+                </a>
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-orange-500 text-white px-3 py-1 rounded hover:bg-orange-600 font-semibold text-sm"
+                >
+                  Live Site
+                </a>
+              </div>
+            </div>
           </div>
-          <div
-            ref={addToRefs}
-            className="bg-gray-800 h-64 rounded-xl shadow-lg p-6 hover:shadow-orange-500 transition duration-300 cursor-pointer"
-          >
-            <h3 className="text-xl font-bold mb-2">Social Network Platform</h3>
-            <p className="text-gray-300 mb-4">
-              A social media web app with real-time chat, posts, likes, and
-              comments built using MERN stack and Socket.io.
-            </p>
-          </div>
-          <div
-            ref={addToRefs}
-            className="bg-gray-800 h-64 rounded-xl shadow-lg p-6 hover:shadow-orange-500 transition duration-300 cursor-pointer"
-          >
-            <h3 className="text-xl font-bold mb-2">Online Learning Platform</h3>
-            <p className="text-gray-300 mb-4">
-              An e-learning platform with courses, quizzes, and progress tracking.
-              Built with React, Node.js, Express, and MongoDB.
-            </p>
-          </div>
-          <div
-            ref={addToRefs}
-            className="bg-gray-800 h-64 rounded-xl shadow-lg p-6 hover:shadow-orange-500 transition duration-300 cursor-pointer"
-          >
-            <h3 className="text-xl font-bold mb-2">Event Booking System</h3>
-            <p className="text-gray-300 mb-4">
-              A full-stack event booking app with calendar integration, booking
-              management, and user roles. Developed using MERN stack.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

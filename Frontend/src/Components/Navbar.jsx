@@ -28,7 +28,10 @@ const Navbar = () => {
       const letters = portfolioRef.current.querySelectorAll("span");
 
       // Timeline for infinite loop
-      const tl = gsap.timeline({ repeat: -1, defaults: { ease: "power1.inOut" } });
+      const tl = gsap.timeline({
+        repeat: -1,
+        defaults: { ease: "power1.inOut" },
+      });
 
       // Animate letters one by one with stagger
       tl.to(letters, {
@@ -117,7 +120,7 @@ const Navbar = () => {
   };
 
   // Split Portfolio into spans for animation
-  const portfolioText = "Portfolio".split("").map((letter, index) => (
+  const portfolioText = "Mounesh V".split("").map((letter, index) => (
     <span
       key={index}
       style={{ opacity: 0, display: "inline-block", transformOrigin: "center" }}
@@ -141,12 +144,32 @@ const Navbar = () => {
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white"
             >
               {menuOpen ? (
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               ) : (
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               )}
             </button>
@@ -166,17 +189,51 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <div className="hidden sm:flex sm:space-x-4 ml-auto">
-            {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-gray-300 px-3 py-2 text-sm font-medium"
-                onMouseEnter={handleLinkHover}
-                onMouseLeave={handleLinkHoverOut}
-              >
-                {item}
-              </a>
-            ))}
+            <a
+              href="#home"
+              onClick={()=>document.getElementById("home").scrollIntoView({behavior:"smooth"})}
+              className="text-gray-300 px-3 py-2 text-sm font-medium"
+              onMouseEnter={handleLinkHover}
+              onMouseLeave={handleLinkHoverOut}
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              onClick={()=>document.getElementById("about").scrollIntoView({behavior: "smooth"})}
+              className="text-gray-300 px-3 py-2 text-sm font-medium"
+              onMouseEnter={handleLinkHover}
+              onMouseLeave={handleLinkHoverOut}
+            >
+              About
+            </a>
+            <a
+              href="#skills"
+              onClick={()=>document.getElementById("skills").scrollIntoView({behavior:"smooth"})}
+              className="text-gray-300 px-3 py-2 text-sm font-medium"
+              onMouseEnter={handleLinkHover}
+              onMouseLeave={handleLinkHoverOut}
+            >
+              Skills
+            </a>
+            <a
+              href="#projects"
+              onClick={()=>document.getElementById("projects").scrollIntoView({behavior:"smooth"})}
+              className="text-gray-300 px-3 py-2 text-sm font-medium"
+              onMouseEnter={handleLinkHover}
+              onMouseLeave={handleLinkHoverOut}
+            >
+              Projects
+            </a>
+            <a
+              href="#contact"
+              onClick={()=>document.getElementById("contact").scrollIntoView({behavior:"smooth"})}
+              className="text-gray-300 px-3 py-2 text-sm font-medium"
+              onMouseEnter={handleLinkHover}
+              onMouseLeave={handleLinkHoverOut}
+            >
+              Contact
+            </a>
           </div>
         </div>
       </div>
@@ -185,20 +242,58 @@ const Navbar = () => {
       <div
         ref={menuRef}
         className="sm:hidden overflow-hidden"
-        style={{ height: 0, opacity: 0, pointerEvents: menuOpen ? "auto" : "none" }}
+        style={{
+          height: 0,
+          opacity: 0,
+          pointerEvents: menuOpen ? "auto" : "none",
+        }}
       >
         <div className="space-y-1 px-2 pt-2 pb-3">
-          {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="block text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium"
+        <a
+              href="#home"
+              onClick={()=>document.getElementById("home").scrollIntoView({behavior:"smooth"})}
+              className="text-gray-300 px-3 py-2 text-sm font-medium"
               onMouseEnter={handleLinkHover}
               onMouseLeave={handleLinkHoverOut}
             >
-              {item}
+              Home
             </a>
-          ))}
+            <a
+              href="#about"
+              onClick={()=>document.getElementById("about").scrollIntoView({behavior: "smooth"})}
+              className="text-gray-300 px-3 py-2 text-sm font-medium"
+              onMouseEnter={handleLinkHover}
+              onMouseLeave={handleLinkHoverOut}
+            >
+              About
+            </a>
+            <a
+              href="#skills"
+              onClick={()=>document.getElementById("skills").scrollIntoView({behavior:"smooth"})}
+              className="text-gray-300 px-3 py-2 text-sm font-medium"
+              onMouseEnter={handleLinkHover}
+              onMouseLeave={handleLinkHoverOut}
+            >
+              Skills
+            </a>
+            <a
+              href="#projects"
+              onClick={()=>document.getElementById("projects").scrollIntoView({behavior:"smooth"})}
+              className="text-gray-300 px-3 py-2 text-sm font-medium"
+              onMouseEnter={handleLinkHover}
+              onMouseLeave={handleLinkHoverOut}
+            >
+              Projects
+            </a>
+            <a
+              href="#contact"
+              onClick={()=>document.getElementById("contact").scrollIntoView({behavior:"smooth"})}
+              className="text-gray-300 px-3 py-2 text-sm font-medium"
+              onMouseEnter={handleLinkHover}
+              onMouseLeave={handleLinkHoverOut}
+            >
+              Contact
+            </a>
         </div>
       </div>
     </nav>

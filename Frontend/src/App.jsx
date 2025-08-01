@@ -35,8 +35,8 @@ const App = () => {
     <>
       <Navbar />
       <Home />
-      <div className="reveal-section"><About /></div>
       <div className="reveal-section"><Skills /></div>
+      <div className="reveal-section"><About /></div>
       <div className="reveal-section"><Project /></div>
       <div className="reveal-section"><Contact /></div>
     </>

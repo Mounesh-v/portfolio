@@ -5,6 +5,7 @@ import facebook from "../assets/Logos/facebook.svg";
 import linkedin from "../assets/Logos/linkedin.svg";
 import twitter from "../assets/Logos/twitter.svg";
 import github from "../assets/Logos/github.svg";
+import {FiDatabase } from "react-icons/fi"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +18,7 @@ const About = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 80%", 
+        start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play reverse play reverse",
       },
@@ -56,6 +57,7 @@ const About = () => {
 
   return (
     <div
+      id="about"
       ref={containerRef}
       className="flex flex-col md:flex-row justify-between items-start border-2 border-gray-800 text-white min-h-screen w-full px-5 sm:px-10 py-8 md:py-12"
       style={{ scrollBehavior: "smooth" }}
@@ -65,97 +67,62 @@ const About = () => {
         <p className="text-orange-500 text-3xl mb-4 font-semibold">About Me</p>
         <p className="text-white text-2xl font-semibold">
           Hello! I'm{" "}
-          <span className="text-orange-500 font-semibold">Mounesh</span>. I'm
-          Professional Web Designer & <br />
+          <span className="text-orange-500 font-semibold">Mounesh</span>. a
+          creative and curious Full Stack Web Developer with a passion for
+          building modern, user-centric <br />
           <span className="text-orange-500 font-semibold">
-            Full Stack Web Developer
+            web applications.
           </span>
           .
         </p>
         <p className="text-white my-5 text-base sm:text-lg leading-relaxed">
-          I’m a passionate and curious Computer Science student with a strong
-          interest in full-stack web development, problem-solving, and building
-          impactful digital solutions. Currently pursuing my B.E. in Computer
-          Science, I enjoy exploring modern technologies like React, Node.js,
-          and MongoDB, while continuously learning and experimenting through
-          real-world projects and hackathons. My focus is on creating clean,
-          efficient, and user-friendly applications. Whether it's developing
-          backend APIs or crafting intuitive frontend interfaces, I love turning
-          ideas into working solutions. I believe in learning by doing and
-          constantly pushing my boundaries to grow as a developer and innovator.
+          I specialize in crafting responsive, scalable solutions using
+          technologies like React, Node.js, Express, MongoDB, Tailwind CSS, and
+          Bootstrap. I love turning ideas into clean, intuitive interfaces and
+          robust backend systems. Whether I’m building RESTful APIs or
+          fine-tuning front-end experiences, I focus on writing maintainable
+          code and delivering impactful digital products. Driven by curiosity
+          and a hands-on mindset, I constantly explore new tools, frameworks,
+          and design patterns through real-world projects and collaborative
+          development. For me, development is not just a skill — it’s a creative
+          process of solving problems, bringing ideas to life, and continuously
+          learning along the way.
         </p>
       </div>
 
       {/* Right Section - Follow Me */}
-      <div className="w-full md:w-1/5 flex flex-col items-center md:items-center md:mr-[70px]">
-        <p
-          ref={followMeRef}
-          className="text-white font-bold text-4xl sm:text-5xl mb-2 text-center md:text-left"
-        >
-          Follow Me
-        </p>
-        <p className="text-orange-500 text-sm sm:text-base font-semibold mb-6 text-center md:text-left max-w-xs">
-          Connect with me on social media platforms and let's build something
-          amazing together!
-        </p>
-        <div className="grid grid-cols-4 sm:grid-cols-2 gap-6 sm:gap-10 my-8">
-          <a
-            href="https://www.facebook.com/profile.php?id=61560451543825"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-pointer hover:rounded-4xl outline outline-2 outline-transparent hover:outline-orange-500 transition-all duration-300"
-            ref={(el) => (iconsRef.current[0] = el)}
-          >
-            <img
-              className="h-[70px] w-[70px] sm:h-[90px] sm:w-[90px]"
-              src={facebook}
-              alt="Facebook"
-            />
-          </a>
+      <div className="w-full md:w-auto flex justify-center items-center md:mr-[70px]">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {/* Box 1 */}
+    <div className="hover:bg-[#f36d07] bg-[#0b1120] cursor-pointer hover:shadow-xl hover:scale-105 duration-700 rounded-2xl px-6 py-8 text-center w-[200px]">
+      <div className="text-3xl text-blue-400 mb-2">&lt;/&gt;</div>
+      <h3 className="text-white font-bold text-lg">4</h3>
+      <p className="text-gray-400 text-sm mt-1">Projects Built</p>
+    </div>
 
-          <a
-            href="https://www.linkedin.com/in/mounesh-v-209476331/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-pointer hover:rounded-4xl outline outline-2 outline-transparent hover:outline-orange-500 transition-all duration-300"
-            ref={(el) => (iconsRef.current[1] = el)}
-          >
-            <img
-              className="h-[70px] w-[70px] sm:h-[90px] sm:w-[90px]"
-              src={linkedin}
-              alt="LinkedIn"
-            />
-          </a>
+    {/* Box 2 */}
+    <div className="hover:bg-[#f36d07] bg-[#0b1120] cursor-pointer hover:shadow-xl hover:scale-105 duration-300 rounded-2xl px-6 py-8 text-center w-[200px]">
+      <div className="text-3xl text-orange-400 mb-2"><center><FiDatabase /></center></div>
+      <h3 className="text-white font-bold text-lg">MERN</h3>
+      <p className="text-gray-400 text-sm mt-1">Stack developer</p>
+    </div>
 
-          <a
-            href="https://x.com/MouneshV96"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-pointer hover:rounded-4xl outline outline-2 outline-transparent hover:outline-orange-500 transition-all duration-300"
-            ref={(el) => (iconsRef.current[2] = el)}
-          >
-            <img
-              className="h-[70px] w-[70px] sm:h-[90px] sm:w-[90px]"
-              src={twitter}
-              alt="Twitter"
-            />
-          </a>
+    {/* Box 3 */}
+    <div className="hover:bg-[#f36d07] bg-[#0b1120] cursor-pointer hover:shadow-xl hover:scale-105 duration-300 rounded-2xl px-6 py-8 text-center w-[200px]">
+      <div className="text-3xl text-cyan-400 mb-2">🌐</div>
+      <h3 className="text-white font-bold text-lg">Cloud</h3>
+      <p className="text-gray-400 text-sm mt-1">Integration</p>
+    </div>
 
-          <a
-            href="https://github.com/Mounesh-v"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-pointer hover:rounded-4xl outline outline-2 outline-transparent hover:outline-orange-500 transition-all duration-300"
-            ref={(el) => (iconsRef.current[3] = el)}
-          >
-            <img
-              className="h-[70px] w-[70px] sm:h-[90px] sm:w-[90px]"
-              src={github}
-              alt="GitHub"
-            />
-          </a>
-        </div>
-      </div>
+    {/* Box 4 */}
+    <div className="hover:bg-[#f36d07] bg-[#0b1120] cursor-pointer hover:shadow-xl hover:scale-105 duration-300 rounded-2xl px-6 py-8 text-center w-[200px]">
+      <div className="text-3xl text-purple-400 mb-2">⚡</div>
+      <h3 className="text-white font-bold text-lg">Fresh</h3>
+      <p className="text-gray-400 text-sm mt-1">Innovation</p>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };
