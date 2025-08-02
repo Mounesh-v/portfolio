@@ -50,7 +50,7 @@ const Project = () => {
           {
             title: "CodeHatch – E-Learning",
             desc: "A full-stack learning platform with user auth, video content, and payment gateway. Designed for seamless course browsing and secure access.",
-            image: "/public/projects/codehatch.png",
+            image: "/codehatch.png",
             tech: [
               "React (Vite)",
               "Tailwind CSS",
