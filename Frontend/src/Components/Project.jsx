@@ -50,7 +50,6 @@ const Project = () => {
           {
             title: "CodeHatch – E-Learning",
             desc: "A full-stack learning platform with user auth, video content, and payment gateway. Designed for seamless course browsing and secure access.",
-            image: "/codehatch.png",
             tech: [
               "React (Vite)",
               "Tailwind CSS",
@@ -66,7 +65,6 @@ const Project = () => {
           {
             title: "MeteoZin – Weather App",
             desc: "Real-time weather app with animated UI, responsive layout and API-based forecasts.",
-            image: "/public/projects/weather.png",
             tech: [
               "React",
               "Vite",
@@ -81,7 +79,6 @@ const Project = () => {
           {
             title: "Music Tracker",
             desc: "A modern music search app using the Spotify API to display live album art and previews.",
-            image: "/public/projects/musicTracker.png",
             tech: ["React.js", "Tailwind CSS", "Spotify API", "Netlify"],
             github: "https://github.com/Mounesh-v/music-tracker-app",
             demo: "https://music-tracker-app.netlify.app/",
@@ -89,7 +86,6 @@ const Project = () => {
           {
             title: "TechConference – Event Platform",
             desc: "Built with SvelteKit and Bootstrap UI for showcasing speaker lineups, schedules, and ticketing features.",
-            image: "/public/projects/Techconf.png",
             tech: ["SvelteKit", "Sveltestrap", "Bootstrap", "Netlify"],
             github: "https://github.com/Mounesh-v/techconf",
             demo: "https://techconfernce.netlify.app/",
@@ -100,14 +96,6 @@ const Project = () => {
             ref={addToRefs}
             className="bg-gray-900 rounded-xl shadow-md overflow-hidden"
           >
-            {/* Image */}
-            <div className="relative">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 sm:h-56 object-cover"
-              />
-            </div>
 
             {/* Text content */}
             <div className="p-5">
